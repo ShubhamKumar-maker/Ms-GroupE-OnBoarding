@@ -1,0 +1,99 @@
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(233, 227, 227);
+
+    .row{
+
+        
+
+        .div{
+            height:200px;
+            width:500px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             background-color: rgb(233, 227, 227);
+             cursor: pointer;
+        }
+        .div1{
+            background-color: rgb(168, 187, 245);
+            border-top-left-radius: 50px;
+            .ins-div1{
+                display: inline-flex;
+                flex-wrap: wrap;
+                margin:5px;
+                .div1-img{
+                float: left;
+                width: 150px;
+                height: 150px;
+               margin-left: 30px;
+                shape-outside: circle();
+                clip-path: circle();
+                background:  rgb(168, 187, 245);
+                }
+                h1{
+                    margin-left: 30px;
+                }
+                
+                .div1-button{
+                    margin-top: 80px;
+                    // margin-left: 20px;
+                    margin-left: -90px;
+                    position: relative;
+                    margin-right: 50px;
+                    width: 60px;
+                    height:30px;
+                    background-color: lightblue;
+                    border-radius: 10px;
+                    border-color: transparent;
+                }
+            }
+        }
+        .div1:hover{
+            background-color: rgb(150, 175, 252);
+        }
+        .div2{
+            background-color: rgb(201, 236, 236);
+            border-radius: 50px;
+        }
+        .div2:hover{
+            background-color: rgb(161, 233, 233);
+        }
+        .div3{
+            background-color: rgb(223, 198, 223);
+            border-radius: 50px;
+        }
+        .div3:hover{
+            background-color: rgb(231, 171, 231);
+        }
+        
+        .div4{
+            background-color: rgb(233, 208, 199);
+            border-radius: 50px;
+        }
+        .div4:hover{
+            background-color: rgb(231, 173, 151);
+        }
+        .div5{
+            background-color: rgb(208, 245, 208);
+            border-radius: 50px;
+        }
+        .div5:hover{
+            background-color: rgb(156, 241, 156);
+        }
+        .div6{
+            background-color: rgb(221, 233, 198);
+            border-radius: 50px;
+        }
+        .div6:hover{
+            background-color: rgb(200, 230, 146);
+
+        }
+
+
+    }
+
+}

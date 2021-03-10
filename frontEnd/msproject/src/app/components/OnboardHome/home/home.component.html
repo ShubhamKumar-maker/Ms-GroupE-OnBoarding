@@ -1,0 +1,55 @@
+<div class="container">
+    <div id="navbar"> 
+        <ul> 
+          <li><a href="http://github.com"><h1>Onboard Dashboard</h1></a></li> 
+          <li class="link5"><button><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</button></li> 
+        </ul> 
+      </div> 
+    <div class="container3">
+    <div class="total"></div>
+    </div>
+   
+
+    <div class="container1">
+        <div class="container2">
+            <h1 class="heding2">Onboardee List</h1>
+            <Select>
+                <option></option>
+            </Select>
+            <input type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome" (keyup.enter)="search($event)"/>
+            <input type="submit" value="search"/>
+            <button class="trends" (click)="trends()"><i class="fa fa-bar-chart" style="font-size:24px"></i></button>
+            <button class="Create" (click)="create()"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
+            <table id="onboard">
+                <tr>
+                  <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Onboardee Id</th>
+                  <th><i class="fa fa-user-o" aria-hidden="true"></i> Name</th>
+                  <th><i class="fa fa-envelope" aria-hidden="true"></i> Email</th>
+                  <th><i class="fa fa-location-arrow" aria-hidden="true"></i> Location</th>
+                  <th><i class="fa fa-phone" aria-hidden="true"></i> Phone</th>
+                  <th><i class="fa fa-user-o" aria-hidden="true"></i> Hiring Manager</th>
+                  <th>Demand ID</th>
+                  <th>Action</th>
+                </tr>
+                 <ng-template ngFor let-item [ngForOf]="onboardee | paginate:{itemsPerPage:5,currentPage:p}">
+                 <tr>
+                  <td>{{item.onboardeeId}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.location}}</td>
+                  <td>{{item.contactNumber}}</td>
+                  <td>{{item.msHiringManager}}</td>
+                  <td>{{item.demandId}}</td>
+                  <td><div><i style="font-size:24px; padding-left: 5px; cursor: pointer;"  class="fa fa-eye view" aria-hidden="true"(click)="view()" ></i>
+                    <i style="font-size:24px;padding-left: 5px; cursor: pointer;" class="fa fa-pencil-square-o edit" aria-hidden="true" (click)="edit()"></i>
+                    <i style="font-size:24px;padding-left: 5px; cursor: pointer;" class="fa fa-trash delete" aria-hidden="true" (click)="delete(item.onboardeeId)"></i></div></td>
+                </tr> 
+                 </ng-template>
+                 
+                 <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+                
+            </table>
+        </div>
+    </div>
+</div>
+ 
