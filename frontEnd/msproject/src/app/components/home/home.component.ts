@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {SocialAuthService} from 'angularx-social-login';
 import {SocialUser,GoogleLoginProvider} from 'angularx-social-login';
+import { OnboardeeServiceService } from 'src/app/onboardee-service.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
     photourl:any="";
     @Input() user:any;
     value:any;
-  constructor(private router: Router, private route: ActivatedRoute,private authservice:SocialAuthService) {
+  constructor(private router: Router, private route: ActivatedRoute,private authservice:SocialAuthService,private servie:OnboardeeServiceService) {
     this.route.params.subscribe(params => {
       this.value = params['value'];
       console.log(this.value);
@@ -30,13 +31,15 @@ export class HomeComponent implements OnInit {
     {
       this.router.navigate(['/Login']);
     }
+
     
   }
 
   signout()
   {
     this.authservice.signOut();
-    this.router.navigate(['/Login']);
+    sessionStorage.clear();
+    this.router.navigate(['/Login']);  
   }
   
 

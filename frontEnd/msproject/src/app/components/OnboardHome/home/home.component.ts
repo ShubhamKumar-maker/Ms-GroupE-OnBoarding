@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {OnboardeeServiceService} from '../../../onboardee-service.service';
 import onboardee from '../../modles/onboardee-details';
+import {SocialAuthService} from 'angularx-social-login';
+
 
 
 @Component({
@@ -16,15 +18,33 @@ export class HomeComponent implements OnInit {
   SEARCH_NAME:String="";
   onboardee:Array<onboardee>=[];
   OPTION="name";
+  
+ 
 
-  constructor(private route: Router,private service:OnboardeeServiceService) { }
+  constructor(private route: Router,private service:OnboardeeServiceService,private authservice:SocialAuthService ) { }
+  selectedName!:string;
 
   ngOnInit(): void {
+
+    
     this.service.getdata().subscribe((data)=>{
       console.log(data);
       this.onboardee=data;
       console.log(this.onboardee);
+
+
+      if(!sessionStorage.getItem('userToken'))
+      {
+          this.route.navigate(['/Login']);
+      }
+
+
+
+
+
     })
+
+    
   }
 
   create()
@@ -43,11 +63,14 @@ export class HomeComponent implements OnInit {
 
     })
   }
-  view(){
+  view(data:onboardee){
+    this.service.SHARED_DATA=data;
     this.route.navigate(['/Onboard/View']);
 
   }
-  edit(){
+  edit(data2:onboardee){
+    this.service.SHARED_DATA=data2;
+    this.route.navigate(['/Onboard/Update']);
     
   }
   trends(){
@@ -61,12 +84,45 @@ export class HomeComponent implements OnInit {
       {
           this.ngOnInit();
       }
-      else if(this.OPTION=="name")
+      else if(this.selectedName=="name")
       {
         this.onboardee=this.onboardee.filter(res=>{
-          return res.name.toLocaleLowerCase().match(this.SEARCH_NAME.toLocaleLowerCase());
+          return res.name.toLocaleLowerCase().trim().match(this.SEARCH_NAME.toLocaleLowerCase());
+        })
+      }
+      else if(this.selectedName=="email")
+      {
+        this.onboardee=this.onboardee.filter(res=>{
+          return res.email.toLocaleLowerCase().trim().match(this.SEARCH_NAME.toLocaleLowerCase());
+        })
+
+      }
+      else if(this.selectedName=="location")
+      {
+        this.onboardee=this.onboardee.filter(res=>{
+          return res.location.toLocaleLowerCase().trim().match(this.SEARCH_NAME.toLocaleLowerCase());
+        })
+
+      }
+      else if(this.selectedName=="hiringmanager")
+      {
+        this.onboardee=this.onboardee.filter(res=>{
+          return res.msHiringManager.toLocaleLowerCase().trim().match(this.SEARCH_NAME.toLocaleLowerCase());
         })
       }
   }
+  
+  changefun(){
+
+    console.log(this.selectedName);
+
+  }
+
+  signout(){
+    this.authservice.signOut();
+    sessionStorage.clear();
+
+  }
+
 
 }

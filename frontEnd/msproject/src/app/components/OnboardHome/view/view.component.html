@@ -1,1 +1,67 @@
-<p>view works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<section class="create-onboardee">
+    <h1 class="title">View <span style="color: royalblue;">Onboardee</span></h1>
+    <form class="contact-form row" name="form" [formGroup]="form1" (ngSubmit)="form1.valid">
+      <div class="form-field col-lg-6 ">
+        <h6>Name</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.name}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Email</h6>
+        <input type="email" class="input-text js-input form-control" value={{data.email}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Address</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.address}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Phone</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.contactNumber}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 "> 
+        <h6>ETA</h6>
+        <input type="Date" class="input-text js-input form-control" value={{data.eta}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Location</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.location}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Skills</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.skills}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Demand Id</h6>
+        <input type="number" class="input-text js-input form-control" value={{data.demandId}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>BGC Status</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.bgcstatus}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Onboarding Status</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.onboardingStatus}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Ms Hiring Manager</h6>
+        <input type="text" class="input-text js-input form-control" value={{data.msHiringManager}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Onboarding Date</h6>
+        <input type="date" class="input-text js-input form-control" value={{data.onboardingDate}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Creation Date</h6>
+        <input type="date" class="input-text js-input form-control" value={{data.creationdate}} readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <h6>Last Modification Date</h6>
+        <input type="date" class="input-text js-input form-control" value={{data.modificationtime}} readonly=true/>
+      </div>
+    </form>
+ </section>
+
+ 

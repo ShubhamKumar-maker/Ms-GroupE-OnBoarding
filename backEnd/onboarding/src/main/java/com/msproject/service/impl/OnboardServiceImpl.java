@@ -1,6 +1,7 @@
 package com.msproject.service.impl;
 
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.msproject.dao.OnboardDao;
@@ -32,6 +33,12 @@ public class OnboardServiceImpl implements OnboardService {
   @Override
   public OnboardeeDetails updatedata(OnboardeeDetails onboardeedetails, int id) {
     return onboarddao.update(onboardeedetails, id);
+  }
+
+  @Override
+  public List<Map<String, Object>> groupbyOnboardee(String column) {
+    
+    return onboarddao.groupbydata(column);
   }
 
 }

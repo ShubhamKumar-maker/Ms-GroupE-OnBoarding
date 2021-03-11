@@ -10,21 +10,38 @@ import { OnboardeeServiceService } from 'src/app/onboardee-service.service';
 })
 export class LoginComponent implements OnInit {
 
+    mail:string="";
+    patt = new RegExp(/accolitedigital.com$/g);
     user:SocialUser=new SocialUser();
-  constructor(private authservice:SocialAuthService ,private route: Router) { }
+  constructor(private authservice:SocialAuthService ,private route: Router,private service:OnboardeeServiceService) { }
 
   ngOnInit(): void {
     this.authservice.authState.subscribe((user)=>{
-      this.user=user;
-      sessionStorage.setItem("userToken",this.user.authToken);
-      sessionStorage.setItem("image",this.user.photoUrl);
-      sessionStorage.setItem("name",this.user.firstName);
-      this.route.navigate(['/Home',{ value: this.user }]);
+      if(this.patt.test(user.email))
+      {
+        this.user=user;
+          sessionStorage.setItem("userToken",this.user.authToken);
+          sessionStorage.setItem("image",this.user.photoUrl);
+          sessionStorage.setItem("name",this.user.name);
+          this.route.navigate(['/Home',{ value: this.user }]);
+      }
+      else{
+        alert("Login with correct account");
+        this.route.navigate(['/Login']);
+        
+      }
+
+     
     })
+    
+
+    
   }
 
   signInWithGoogle():any{
     this.authservice.signIn(GoogleLoginProvider.PROVIDER_ID)
+    this.service.signin();
+    
   }
 
   signOut():any{
@@ -32,9 +49,6 @@ export class LoginComponent implements OnInit {
     this.user=new SocialUser();
   }
 
-beforEach()
-{
-  window.history.pushState({name: 'MyName', id: 1}, '', '');
-}
+
 
 }

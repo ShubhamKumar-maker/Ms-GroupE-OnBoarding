@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
     "angularx-social-login": "^3.5.4",
+    "chart.js": "^2.9.4",
+    "ng2-charts": "^2.4.2",
     "ng2-order-pipe": "^0.1.5",
     "ng2-search-filter": "^0.5.1",
     "ngx-pagination": "^5.0.0",

@@ -1,6 +1,8 @@
 package com.msproject.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +114,14 @@ public class OnboardeeDaoImpl implements OnboardDao{
     srcMap.addValue(OnboardeeTableConstant.DEMAND_ID,onboardeedetails.getDemandId());
     namedParameterJdbcTemplate.update(query, srcMap);
     return onboardeedetails;
+  }
+  
+  public List<Map<String, Object>>groupbydata(String column)
+  {
+    String query="select count("+OnboardeeTableConstant.ID+") as value ,"+column +" as data from onboardee_details group by "+column;
+    List<Map<String, Object>> values = jdbctemplate.queryForList(query);
+    return values;
+       
   }
 
 }

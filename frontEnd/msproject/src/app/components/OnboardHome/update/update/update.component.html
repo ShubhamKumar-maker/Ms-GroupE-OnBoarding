@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<section class="create-onboardee">
+    <h1 class="title">Update <span style="color: royalblue;">Onboardee</span></h1>
+    <form class="contact-form row" name="form" [formGroup]="form1" (ngSubmit)="onSubmit()">
+        <div class="form-field col-lg-6 ">
+            <label>Onboardee ID</label>
+            <input type="text" class="input-text js-input form-control"  formControlName="onboardeeId" readonly=true />
+          </div>
+      <div class="form-field col-lg-6 ">
+        <label>Name</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="name"  />
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Email</label>
+        <input type="email" class="input-text js-input form-control"  formControlName="email"  />
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Address</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="address"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Phone</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="contactNumber"/>
+      </div>
+      <div class="form-field col-lg-6 "> 
+        <label>ETA</label>
+        <input type="Date" class="input-text js-input form-control"  formControlName="eta" />
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Location</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="location" />
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Skills</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="skills"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Demand Id</label>
+        <input type="number" class="input-text js-input form-control"  formControlName="demandId" />
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>BGC Status</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="bgcstatus"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Onboarding Status</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="onboardingStatus"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Ms Hiring Manager</label>
+        <input type="text" class="input-text js-input form-control"  formControlName="msHiringManager"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Onboarding Date</label>
+        <input type="date" class="input-text js-input form-control"  formControlName="onboardingDate"/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Creation Date</label>
+        <input type="date" class="input-text js-input form-control" formControlName="creationdate" readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <label>Modification Date</label>
+        <input type="date" class="input-text js-input form-control" formControlName="modificationtime" readonly=true/>
+      </div>
+      <div class="form-field col-lg-6 ">
+       <input class="submit-btn" type="submit" value="Update" />
+      </div>
+    </form>
+ </section>
+
+ 

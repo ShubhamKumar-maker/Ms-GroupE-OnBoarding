@@ -32,7 +32,8 @@ public class OnboardQuery {
       OnboardeeTableConstant.ONBOARDING_DATE + " =:" + OnboardeeTableConstant.ONBOARDING_DATE + ","+
       OnboardeeTableConstant.MODIFICATION_TIME + " =:" + OnboardeeTableConstant.MODIFICATION_TIME + ","+
       OnboardeeTableConstant.CREATION_DATE + " =:" + OnboardeeTableConstant.CREATION_DATE + ","+
-      OnboardeeTableConstant.DEMAND_ID + " =:" + OnboardeeTableConstant.DEMAND_ID 
+      OnboardeeTableConstant.DEMAND_ID + " =:" + OnboardeeTableConstant.DEMAND_ID + ","+
+      OnboardeeTableConstant.SKILLS + "=:" + OnboardeeTableConstant.SKILLS 
 
       + " WHERE "
       + OnboardeeTableConstant.ID + " =:" + OnboardeeTableConstant.ID;

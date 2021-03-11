@@ -7,8 +7,8 @@ export default class OnboardeeDetails {
      demandId=0;
      location="";
      skills="";
-     ETA:Date=new Date;
-     BGCstatus="";
+     eta:Date=new Date;
+     bgcstatus="";
      onboardingStatus="";
      onboardingDate="";
      msHiringManager="";

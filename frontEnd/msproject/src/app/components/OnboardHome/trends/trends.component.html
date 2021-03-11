@@ -1,1 +1,27 @@
-<p>trends works!</p>
+<app-nav></app-nav>
+<div class="heading">
+    <div class="title"><h1>Trends</h1>
+        <select [(ngModel)]="selectedName" (change)="changefun()">
+            <option value="skills">skills</option>
+            <option value="ms_hiring_manager">MS hiring manager</option>
+            <option value="location">Location</option>
+        </select>
+        <input type="button" value="&#xf0c0; click" (click)="groupdata()"/>
+    </div>
+</div>
+
+
+
+<diV class="container">
+    
+<div class="chart">
+    <canvas baseChart 
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [legend]="barChartLegend"
+      [chartType]="barChartType">
+    </canvas>
+  </div>
+</diV>

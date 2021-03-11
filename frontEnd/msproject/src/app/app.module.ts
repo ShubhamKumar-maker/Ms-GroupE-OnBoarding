@@ -17,6 +17,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateComponent } from './components/OnboardHome/update/update/update.component';
+import { ChartsModule } from 'ng2-charts';
+import { NavComponent } from './components/components/nav/nav.component';
 
 
 
@@ -28,6 +32,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     ViewComponent,
     CreateComponent,
     TrendsComponent,
+    UpdateComponent,
+    NavComponent,
     
     
     
@@ -39,7 +45,12 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     HttpClientModule,
     NgxPaginationModule,
     Ng2OrderModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ChartsModule,
+    
+
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

@@ -1,1 +1,148 @@
-<p>create works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<section class="create-onboardee">
+    <h1 class="title">Create New <span style="color: royalblue;">Onboardee</span></h1>
+    <form class="contact-form row" name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+       <div class="form-field col-lg-6">
+          <input id="name" class="input-text js-input form-control" type="text" 
+          formControlName="name" [ngClass]="{'is-invalid':form.get('name')!.touched && form.get('name')!.invalid}"required>
+          <label class="label" for="name">Name</label>
+          <div class="invalid-feedback">
+            <div>Name is required</div>
+          </div>
+       </div>
+      
+       <div class="form-field col-lg-6 ">
+          <input id="email" class="input-text js-input form-control" type="email"
+          formControlName="email" [ngClass]="{'is-invalid':form.get('email')!.touched && form.get('email')!.invalid}" required>
+          <label class="label" for="email"><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</label>
+          <div *ngIf="form.get('email')!.touched && form.get('email')!.invalid" class="invalid-feedback">
+            <div  *ngIf="form.get('email')!.errors!.required">Email is required</div>
+            <div *ngIf="form.get('email')!.errors!.email">Please enter valid email address</div>
+          </div>
+       </div>
+       <div class="form-field col-lg-6 ">
+          <input id="address" class="input-text js-input form-control" type="text"
+          formControlName="address" [ngClass]="{'is-invalid':form.get('address')!.touched && form.get('address')!.invalid}" required>
+          <label class="label" for="company"><i class="fa fa-address-card" aria-hidden="true"></i> Address</label>
+          <div class="invalid-feedback">
+          <div>Address is required</div>
+        </div>
+       </div>
+        <div class="form-field col-lg-6 ">
+          <input id="contactNumber" class="input-text js-input form-control" type="number"
+          formControlName="contactNumber" [ngClass]="{'is-invalid':form.get('contactNumber')!.touched && form.get('contactNumber')!.invalid}" required>
+          <label class="label" for="contactNumber"><i class="fa fa-phone" aria-hidden="true"></i> Contact Number</label>
+          <div class="invalid-feedback">
+          <div>Contact Number is required</div>
+        </div>
+       </div>
+       <div class="form-field col-lg-3">
+          <input id="demandId" class="input-text js-input form-control" type="number" 
+          formControlName="demandId" [ngClass]="{'is-invalid':form.get('demandId')!.touched && form.get('demandId')!.invalid}"required>
+          <label class="label" for="demandId">Demand Id</label>
+          <div class="invalid-feedback">
+          <div>Demand ID is required</div>
+        </div>
+       </div>
+       <div class="form-field col-lg-9">
+        <input id="skills" class="input-text js-input form-control" type="text"
+        formControlName="skills" [ngClass]="{'is-invalid':form.get('skills')!.touched && form.get('skills')!.invalid}" required>
+        <label class="label" for="skills"><i class="fa fa-laptop" aria-hidden="true"></i> Skills</label>
+        <div class="invalid-feedback">
+        <div>Skills is required</div>
+    </div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="Location" class="input-text js-input form-control" type="text" 
+        formControlName="location" [ngClass]="{'is-invalid':form.get('location')!.touched && form.get('location')!.invalid}" required>
+        <label class="label" for="location"><i class="fa fa-location-arrow" aria-hidden="true"></i> Location</label>
+        <div class="invalid-feedback">
+        <div>Location is required</div></div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="msHiringManager" class="input-text js-input form-control" type="text"
+        formControlName="msHiringManager" [ngClass]="{'is-invalid':form.get('msHiringManager')!.touched && form.get('msHiringManager')!.invalid}">
+        <label class="label" for="msHiringManager"><i class="fa fa-user-circle-o" aria-hidden="true"></i> MS Hiring Manager</label>
+        <div class="invalid-feedback">
+        <div>Ms Hiring Manager is required</div></div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="bgcstatus" class="input-text js-input form-control" type="text" 
+        formControlName="bgcstatus" [ngClass]="{'is-invalid':form.get('bgcstatus')!.touched && form.get('bgcstatus')!.invalid}">
+        <label class="label" for="bgcstatus">BGC Status</label>
+        <div class="invalid-feedback">
+        <div>BGC status is required</div></div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="eta" class="input-text js-input form-control" type="date"  
+        formControlName="eta" [ngClass]="{'is-invalid':form.get('eta')!.touched && form.get('eta')!.invalid}">
+        <label class="label" for="eta"><i class="fa fa-calendar-o" aria-hidden="true"></i> ETA</label>
+        <div class="invalid-feedback">
+        <div>ETA is required</div></div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="onboardingStatus" class="input-text js-input form-control" type="text" 
+        formControlName="onboardingStatus" [ngClass]="{'is-invalid':form.get('onboardingStatus')!.touched && form.get('onboardingStatus')!.invalid}">
+        <label class="label" for="onboardingStatus">Onboarding status</label>
+        <div class="invalid-feedback">
+        <div>Onboarding status is required</div></div>
+     </div>
+     <div class="form-field col-lg-4">
+        <input id="onboardingDate" class="input-text js-input form-control" type="Date" 
+        formControlName="onboardingDate" [ngClass]="{'is-invalid':form.get('onboardingDate')!.touched && form.get('onboardingDate')!.invalid}">
+        <label class="label" for="onboardingDate"><i class="fa fa-calendar-o" aria-hidden="true"></i> onboardingDate</label>
+        <div class="invalid-feedback">
+        <div>onboardingDate is required</div></div>
+     </div>
+       <div class="form-field col-lg-12">
+          <input class="submit-btn" type="submit" value="Submit">
+       </div>
+    </form>
+ </section>
+
+ <!-- <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <div class="jumbotron">
+          <h2>Angular 6 Reactive Form validation</h2>
+          <form name="form" [formGroup]="form">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text"  class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+              <div class="invalid-feedback">
+                <div>First Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required />
+              <div class="invalid-feedback">
+                <div>Last Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"   />
+              <div *ngIf="form.get('email').touched && form.get('email').invalid"  class="invalid-feedback">
+                <div *ngIf="form.get('email').errors.required">Email Name is required</div>
+                <div *ngIf="form.get('email').errors.email">Email must be a valid email Address</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control"  formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+              <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+                <div *ngIf="form.get('password').errors.required">Password is required</div>
+                <div *ngIf="form.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+              </div>
+             
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary"  [disabled]="!form.valid">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
