@@ -124,5 +124,9 @@ export class HomeComponent implements OnInit {
 
   }
 
+  reset(){
+    this.ngOnInit();
+  }
+
 
 }

@@ -5,6 +5,7 @@ import {HomeComponent} from './components/home/home.component';
 import {OnboardModule} from './components/onboard/onboard.module'
 
 const routes: Routes = [
+  {path:"", redirectTo:'Login', pathMatch:'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Home', component: HomeComponent },
   {path:'Onboard',loadChildren: () =>  OnboardModule}

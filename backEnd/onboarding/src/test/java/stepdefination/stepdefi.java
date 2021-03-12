@@ -1,6 +1,7 @@
 package stepdefination;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
 import org.junit.Assert;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.And;
@@ -47,6 +49,34 @@ public class stepdefi {
   }
   
   
+  @Given("user wants to create an Onboardee-details with the following attributes")
+  public void user_wants_to_create_an_onboardee_details_with_the_following_attributes(DataTable dataTable) {
+      // Write code here that turns the phrase above into concrete actions
+      // For automatic transformation, change DataTable to one of
+      // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+      // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+      // Double, Byte, Short, Long, BigInteger or BigDecimal.
+      //
+      // For other transformations you can register a DataTableType.
+    List<List<String>> lt= dataTable.asLists(String.class);
+    
+    for(List<String>e:lt)
+    {
+      System.out.print(e);
+    }
+  }
+
+  @When("user saves the new Onboardee-details'WITH ALL REQUIRED FIELDS'")
+  public void user_saves_the_new_onboardee_details_with_all_required_fields() {
+      // Write code here that turns the phrase above into concrete actions
+      throw new io.cucumber.java.PendingException();
+  }
+
+  @Then("the save {string}")
+  public void the_save(String string) {
+      // Write code here that turns the phrase above into concrete actions
+      throw new io.cucumber.java.PendingException();
+  }
 
  
 }

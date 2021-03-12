@@ -218,12 +218,12 @@ public class OnboardeeDetails {
 
   @Override
   public String toString() {
-    return "OnboardeeDetails [onboardeeId=" + onboardeeId + ", name=" + name + ", email=" + email
+    return "{onboardeeId=" + onboardeeId + ", name=" + name + ", email=" + email
         + ", contactNumber=" + contactNumber + ", address=" + address + ", demandId=" + demandId
         + ", location=" + location + ", skills=" + skills + ", ETA=" + ETA + ", BGCstatus="
         + BGCstatus + ", onboardingStatus=" + onboardingStatus + ", onboardingDate="
         + onboardingDate + ", msHiringManager=" + msHiringManager + ", creationdate=" + creationdate
-        + ", modificationtime=" + modificationtime + "]";
+        + ", modificationtime=" + modificationtime + "}";
   }
   
   

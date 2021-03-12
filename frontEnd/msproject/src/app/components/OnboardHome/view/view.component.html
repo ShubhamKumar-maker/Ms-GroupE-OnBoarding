@@ -61,6 +61,11 @@
         <h6>Last Modification Date</h6>
         <input type="date" class="input-text js-input form-control" value={{data.modificationtime}} readonly=true/>
       </div>
+
+      <div class="form-field col-lg-6 ">
+        <button type="button" class="btn btn-secondary" (click)="back()"><i class="fa fa-backward" aria-hidden="true"></i> Home</button>
+        <button type="button" class="btn btn-primary" (click)="editfun()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Data</button>
+      </div>
     </form>
  </section>
 

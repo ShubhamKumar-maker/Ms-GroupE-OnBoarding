@@ -37,7 +37,7 @@ export class TrendsComponent implements OnInit {
 
 
   constructor(private router: Router,private service:OnboardeeServiceService) { }
-
+  mytextdata!:String;
   ngOnInit(): void {
     this.userToken=sessionStorage.getItem("userToken");
     if(this.userToken==null)
@@ -85,5 +85,8 @@ export class TrendsComponent implements OnInit {
     })
     this.ngOnInit();
   }
+
+
+  
 
 }

@@ -34,6 +34,14 @@ export class ViewComponent implements OnInit {
     this.data=this.service.SHARED_DATA;
     console.log(this.data);
   }
+  back()
+  {
+    this.router.navigate(['/Onboard/Home'])
+  }
+  editfun()
+  {
+    this.router.navigate(['/Onboard/Update']);
+  }
 
 
 }
